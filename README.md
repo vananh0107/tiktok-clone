@@ -1,4 +1,3 @@
-Ứng dụng được viết bằng nuxt3
 Trang chủ
 ![image](https://github.com/vananh0107/tiktok-clone/assets/123862819/5e52cbd7-adcc-47f5-966f-86725715a781)
 Phần đăng ký và đăng nhập có xử lí các ngoại lệ
@@ -12,7 +11,7 @@ edit profile
 upload video
 ![image](https://github.com/vananh0107/tiktok-clone/assets/123862819/3d90c207-fe7d-42f2-b8c9-d8e3e4407a92)
 detail post
-![image](https://github.com/vananh0107/tiktok-clone/assets/123862819/637aa003-71ee-4262-ba9b-cb75ef116760)
+![image](https://github.com/vananh0107/tiktok-clone/assets/123862819/668e210a-9be8-4cc9-8443-0303b648ba70)
 search account
 ![image](https://github.com/vananh0107/tiktok-clone/assets/123862819/169937e5-cf89-4245-abd6-a1f30f52b08f)
 responsive
