@@ -1,8 +1,5 @@
 Trang chủ
 ![image](https://github.com/vananh0107/tiktok-clone/assets/123862819/5e52cbd7-adcc-47f5-966f-86725715a781)
-Phần đăng ký và đăng nhập có xử lí các ngoại lệ
-![image](https://github.com/vananh0107/tiktok-clone/assets/123862819/14b36344-a29f-4b45-b6bd-de2917b924d2)
-![image](https://github.com/vananh0107/tiktok-clone/assets/123862819/613c7665-707a-4f73-ab59-78341f74fa7b)
 profile người dùng 
 ![image](https://github.com/vananh0107/tiktok-clone/assets/123862819/b5b58113-75d8-428d-8cfa-0e96c636eda6)
 edit profile
@@ -15,8 +12,9 @@ detail post
 search account
 ![image](https://github.com/vananh0107/tiktok-clone/assets/123862819/169937e5-cf89-4245-abd6-a1f30f52b08f)
 responsive
-![image](https://github.com/vananh0107/tiktok-clone/assets/123862819/ac4ebb98-eaef-4e47-8574-dbc0a0b20c08)
-![image](https://github.com/vananh0107/tiktok-clone/assets/123862819/7c05a9ca-567b-4525-b09f-69d5b4eab963)
+![image](https://github.com/vananh0107/tiktok-clone/assets/123862819/6c347610-fc28-4544-a5b8-7d90804420d1)
+![image](https://github.com/vananh0107/tiktok-clone/assets/123862819/7ed14b87-c13f-4173-9726-8f53e14ad114)
+
 
 
 
