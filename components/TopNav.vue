@@ -162,11 +162,6 @@ const performSearch = async () => {
     showResults.value = $generalStore.search.length > 0;
   }
 };
-const hideSearchResults = () => {
-  // setTimeout(() => {
-  //   showResults.value = false;
-  // }, 400);
-};
 const toggleMenu = () => {
   showMenu.value = !showMenu.value;
 };

@@ -11,6 +11,10 @@
 <script setup>
 import MainLayout from '~/layouts/MainLayout.vue';
 const { $generalStore } = useNuxtApp()
+useHead({
+  title: 'Tiktok',
+  link: [{ rel: 'icon', type: 'image/x-icon',  source: '../static/favicon.png' }],
+})
 onMounted(async () => {
     try {
         $generalStore.getAllUsersAndPosts()
