@@ -18,7 +18,6 @@ search account
 responsive
 ![image](https://github.com/vananh0107/tiktok-clone/assets/123862819/ac4ebb98-eaef-4e47-8574-dbc0a0b20c08)
 ![image](https://github.com/vananh0107/tiktok-clone/assets/123862819/7c05a9ca-567b-4525-b09f-69d5b4eab963)
-![image](https://github.com/vananh0107/tiktok-clone/assets/123862819/b1523d8c-d5a5-45ae-b1d8-5cc809110360)
 
 
 
