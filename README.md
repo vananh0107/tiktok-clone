@@ -1,4 +1,3 @@
-![image](https://github.com/vananh0107/tiktok-clone/assets/123862819/166c865f-1af2-42bb-a8d7-b728d33e652c)# tiktok-clone
 Ứng dụng được viết bằng nuxt3
 Trang chủ
 ![image](https://github.com/vananh0107/tiktok-clone/assets/123862819/5e52cbd7-adcc-47f5-966f-86725715a781)
