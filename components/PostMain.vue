@@ -1,6 +1,6 @@
 <template>
   <div :id="`PostMain-${post['_id']}`" class="flex border-b py-6">
-    <div @click="isLoggedIn(post.user)" class="cursor-pointer" >
+    <div @click="isLoggedIn(post.user)" class="cursor-pointer">
       <img
         class="rounded-full max-h-[60px] w-[55px] h-[52px]"
         width="60"
@@ -26,7 +26,9 @@
           v-if="isFollowed"
           class="border text-[15px] px-[21px] py-0.5 border-[#F02C56] text-[#F02C56] hover:bg-[#ffeef2] font-semibold rounded-md"
           @click="
-            message==='Follow' ? handleFollow(post.author) : handleUnFollow(post.author)
+            message === 'Follow'
+              ? handleFollow(post.author)
+              : handleUnFollow(post.author)
           "
         >
           {{ message }}
@@ -83,14 +85,22 @@
             </div>
 
             <div class="pb-4 text-center">
-              <div class="rounded-full bg-gray-200 p-2 cursor-pointer">
+              <div
+                class="rounded-full bg-gray-200 p-2 cursor-pointer"
+                @click="isLoggedIn(post.user)"
+              >
                 <Icon name="bx:bxs-message-rounded-dots" size="25" />
               </div>
-              <span class="text-xs text-gray-800 font-semibold">{{post.comments.length}}</span>
+              <span class="text-xs text-gray-800 font-semibold">{{
+                post.comments.length
+              }}</span>
             </div>
 
             <div class="text-center">
-              <div class="rounded-full bg-gray-200 p-2 cursor-pointer" id="fake-button">
+              <div
+                class="rounded-full bg-gray-200 p-2 cursor-pointer"
+                id="fake-button"
+              >
                 <Icon name="ri:share-forward-fill" size="25" />
               </div>
               <span class="text-xs text-gray-800 font-semibold">55</span>
@@ -131,7 +141,7 @@ onBeforeUnmount(() => {
 });
 const isFollowed = computed(() => {
   let res = $userStore?.follows?.find((id) => id === post.value.author);
-  if(post.value.author===$userStore.id) return false;
+  if (post.value.author === $userStore.id) return false;
   if ($userStore.id) {
     if (res) message = 'Unfollow';
     else message = 'Follow';
@@ -194,7 +204,7 @@ const displayPost = (post) => {
     $generalStore.isLoginOpen = true;
     return;
   }
-   $generalStore.setBackUrl('/')
+  $generalStore.setBackUrl('/');
   $generalStore.selectedPost = null;
   setTimeout(() => router.push(`/post/${post['_id']}`), 300);
 };
