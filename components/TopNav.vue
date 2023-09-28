@@ -159,7 +159,7 @@ const performSearch = async () => {
     $generalStore.search = [];
   } else {
     await $generalStore.handleSearch(searchTerm.value);
-    showResults.value = $generalStore.search.length > 0;
+    showResults.value = true;
   }
 };
 const toggleMenu = () => {
