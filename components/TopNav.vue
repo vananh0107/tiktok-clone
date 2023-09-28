@@ -153,14 +153,6 @@ const router = useRouter();
 let searchTerm = ref('');
 let showResults = ref(false);
 let showMenu = ref(false);
-// onMounted(() => {
-//   document.addEventListener('mouseup', function (e) {
-//     let popupMenu = 'PopupMenu';
-//     if (!popupMenu.contains(e.target)) {
-//       showMenu.value = false;
-//     }
-//   });
-// });
 const performSearch = async () => {
   if (searchTerm.value == '') {
     showResults.value = false;
@@ -176,7 +168,7 @@ const hideSearchResults = () => {
   // }, 400);
 };
 const toggleMenu = () => {
-  this.showMenu = !this.showMenu;
+  showMenu.value = !showMenu.value;
 };
 const isLoggedIn = () => {
   if ($userStore.id) {

@@ -60,7 +60,6 @@
           v-if="$generalStore.selectedPost.post.video"
           ref="video"
           loop
-          muted
           class="h-screen mx-auto"
           :src="$generalStore.selectedPost.post.video"
         />
@@ -271,7 +270,7 @@ onMounted(async () => {
 });
 
 onBeforeUnmount(() => {
-  video?.value.pause();
+  video.value?.pause();
   video.value.currentTime = 0;
   video.value.src = '';
 });

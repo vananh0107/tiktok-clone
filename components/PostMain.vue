@@ -1,6 +1,6 @@
 <template>
   <div :id="`PostMain-${post['_id']}`" class="flex border-b py-6">
-    <div @click="isLoggedIn(post.user)" class="cursor-pointer">
+    <div @click="isLoggedIn(post.user)" class="cursor-pointer" >
       <img
         class="rounded-full max-h-[60px] w-[55px] h-[52px]"
         width="60"
@@ -55,7 +55,6 @@
             v-if="post.video"
             ref="video"
             loop
-            muted
             class="rounded-xl object-cover mx-auto h-full"
             :src="post.video"
           />
@@ -91,7 +90,7 @@
             </div>
 
             <div class="text-center">
-              <div class="rounded-full bg-gray-200 p-2 cursor-pointer">
+              <div class="rounded-full bg-gray-200 p-2 cursor-pointer" id="fake-button">
                 <Icon name="ri:share-forward-fill" size="25" />
               </div>
               <span class="text-xs text-gray-800 font-semibold">55</span>
@@ -115,11 +114,9 @@ onMounted(() => {
   let observer = new IntersectionObserver(
     function (entries) {
       if (entries[0].isIntersecting) {
-        console.log('Element is playing');
-        video?.value?.play();
+        video.value?.play();
       } else {
-        console.log('Element is paused');
-        video?.value?.pause();
+        video.value?.pause();
       }
     },
     { threshold: [0.6] }
@@ -189,7 +186,7 @@ const isLoggedIn = (user) => {
     $generalStore.isLoginOpen = true;
     return;
   }
-  setTimeout(() => router.push(`/profile/${user.id}`), 200);
+  setTimeout(() => router.push(`/profile/${user['_id']}`), 200);
 };
 
 const displayPost = (post) => {

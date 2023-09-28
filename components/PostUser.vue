@@ -14,7 +14,6 @@
         <div>
             <video 
                 ref="video" 
-                muted
                 loop
                 class="aspect-[3/4] object-cover rounded-md" 
                 :src="post.video"

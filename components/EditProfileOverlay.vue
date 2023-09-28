@@ -1,5 +1,16 @@
 <template>
   <div
+    v-if="isUploading"
+    class="fixed flex items-center justify-center top-0 left-0 w-full h-screen bg-black z-[100] bg-opacity-50"
+  >
+    <Icon
+      class="animate-spin ml-1"
+      name="mingcute:loading-line"
+      size="100"
+      color="#FFFFFF"
+    />
+  </div>
+  <div
     id="EditProfileOverlay"
     class="fixed flex justify-center pt-14 md:pt-[105px] z-50 top-0 left-0 w-full h-full bg-black bg-opacity-50 overflow-auto"
   >
@@ -33,7 +44,11 @@
 
             <div class="flex items-center justify-center sm:-mt-6">
               <label for="image" class="relative cursor-pointer">
-                <img width="95" class="rounded-full w-[72px] h-[68px]" :src="userImage" />
+                <img
+                  width="95"
+                  class="rounded-full w-[72px] h-[68px]"
+                  :src="userImage"
+                />
                 <div
                   class="absolute bottom-0 right-0 rounded-full bg-white shadow-xl border p-1 border-gray-300 inline-block w-[32px]"
                 >
@@ -178,7 +193,6 @@ onMounted(() => {
   userName.value = name.value;
   userBio.value = bio.value;
   userImage.value = image.value;
-  console.log(userImage.value);
 });
 
 let file = ref(null);
@@ -188,7 +202,7 @@ let userImage = ref(null);
 let userName = ref(null);
 let userBio = ref(null);
 let isUpdated = ref(false);
-
+let isUploading = ref(false);
 const getUploadedImage = (e) => {
   file.value = e.target.files[0];
   uploadedImage.value = URL.createObjectURL(file.value);
@@ -202,10 +216,11 @@ const cropAndUpdateImage = async () => {
   data.append('width', coordinates.width || '');
   data.append('left', coordinates.left || '');
   data.append('top', coordinates.top || '');
-
+  isUploading.value = true;
   try {
     await $userStore.updateUserImage(data);
-    await $profileStore.getProfile($userStore.token);
+    isUploading.value = false;
+    await $profileStore.getProfile($userStore.id);
     $userStore.image = $profileStore.image;
     // $generalStore.updateSideMenuImage($generalStore.suggested, $userStore)
     // $generalStore.updateSideMenuImage($generalStore.following, $userStore)
@@ -220,7 +235,7 @@ const updateUserInfo = async () => {
   try {
     console.log(userName.value, userBio.value);
     await $userStore.updateUser(userName.value, userBio.value);
-    await $profileStore.getProfile($userStore.token);
+    await $profileStore.getProfile($userStore.id);
     userName.value = $profileStore.name;
     userBio.value = $profileStore.bio;
 

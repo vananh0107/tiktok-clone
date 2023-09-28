@@ -13,7 +13,11 @@ module.exports = {
     extend: {
       screens: {
         phone: {'max': '450px'},
+        
       },
+      zIndex: {
+        '100': '100',
+      }
     },
   },
   plugins: [
